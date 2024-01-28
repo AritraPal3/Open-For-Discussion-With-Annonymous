@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CHAT WITH ME</title>
+    <link href="styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <div class="box">
+      <name><%=name%></name>
+      <textarea id="txb" placeholder="type here" required></textarea>
+      <button type="submit" id="temp">SEND</button>
+    </div>
+    <div class="msg"></div>
+  </body>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="client.js"></script>
+</html>

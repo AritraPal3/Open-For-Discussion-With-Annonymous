@@ -1,4 +1,5 @@
 const socket = io();
+
 let typed = document.getElementById("txb");
 let btn = document.getElementById("temp");
 let msg = document.getElementsByClassName("msg");
@@ -19,7 +20,7 @@ socket.on("details", (e) => {
     socket.broadcast.emit("details", det);
 });
 
-
+   
 socket.on("reply", (reply) => {
   let para = document.createElement("p");
   para.innerText = reply;

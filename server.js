@@ -17,7 +17,7 @@ app.get("/", (req, res) => {
 
 app.post("/chat", (req, res) => {
   let name = req.body.name;
-  res.render('index', { name: name }); 
+  res.render('chat', { name: name }); 
 });
 
 const io = new Server(server);

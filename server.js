@@ -3,6 +3,7 @@ const http=require("http")
 const path=require("path")
 const bp=require("body-parser")
 const { Server } = require("socket.io");
+const router=require("./src/route")
 
 const app=express();
 const server=http.createServer(app);
@@ -11,14 +12,7 @@ app.use(express.static(path.join(__dirname+"/public")));
 app.use(bp.urlencoded({ extended: true })); 
 app.set('view engine', 'ejs');
 
-app.get("/", (req, res) => {
-  res.sendFile(__dirname+"/public/form.html");
-});
-
-app.post("/chat", (req, res) => {
-  let name = req.body.name;
-  res.render('chat', { name: name }); 
-});
+app.use("/",router);
 
 const io = new Server(server);
 io.on("connection", (socket) => {

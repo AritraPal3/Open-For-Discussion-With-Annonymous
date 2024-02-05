@@ -19,6 +19,8 @@ box{
     flex-direction: column;
     justify-content: end;
     align-items: center;
+    overflow: auto;
+    scroll-behavior: smooth;
     box-shadow: 8px 5px 100px rgb(119, 119, 119);
 }
 
@@ -28,12 +30,11 @@ log{
     flex-direction: row;
     width: 90%;
     height: 80%;
-    border: dashed 2px;
-    overflow: auto;
+    border: dashed 2px rgb(72, 19, 19);
 }
 
 sendBar{
-    border: solid 3px black;
+    border: solid 3px rgb(32, 2, 2);
     margin:20px;
     padding: 5px;
     display: flex;
@@ -57,7 +58,8 @@ send{
     padding: 5px;
     margin:5px;
     border: solid 2px;
-    background: linear-gradient(rgb(86, 69, 69),rgb(83, 91, 94));
+    border-radius: 2rem;
+    background: linear-gradient(to left,rgba(159, 153, 153, 0.486),rgb(29, 76, 94));
 }
 
 recv{
@@ -67,7 +69,8 @@ recv{
     margin: 5px;
     padding: 5px;
     border: solid 2px;
-    background: linear-gradient(rgb(51, 19, 19),rgb(120, 124, 41))
+    border-radius: 2rem;
+    background: linear-gradient(to right,rgb(84, 5, 5),rgb(189, 198, 23))
 }
 
 left{

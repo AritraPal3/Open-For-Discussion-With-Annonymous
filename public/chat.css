@@ -19,8 +19,6 @@ box{
     flex-direction: column;
     justify-content: end;
     align-items: center;
-    overflow: auto;
-    scroll-behavior: smooth;
     box-shadow: 8px 5px 100px rgb(119, 119, 119);
 }
 
@@ -31,6 +29,8 @@ log{
     width: 90%;
     height: 80%;
     border: dashed 2px rgb(72, 19, 19);
+    overflow: auto;
+    scroll-behavior: smooth;
 }
 
 sendBar{

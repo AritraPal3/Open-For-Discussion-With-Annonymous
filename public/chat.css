@@ -29,6 +29,7 @@ log{
     width: 90%;
     height: 80%;
     border: dashed 2px;
+    overflow: auto;
 }
 
 sendBar{

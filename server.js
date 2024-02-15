@@ -8,14 +8,17 @@ const mongoose = require("mongoose");
 const user_model = require("./db_models/users");
 const dotenv = require("dotenv");
 
+const username=process.env.username;
+const password=process.env.password;
+
 dotenv.config();
 const app = express();
 const server = http.createServer(app);
-const dbUrl = "mongodb://localhost:27017/Chat-App"
+const dbUrl = "mongodb://localhost:27017/Chat-App";
 
 async function DBconn() {
   mongoose
-    .connect(dbUrl)
+    .connect(process.env.DB_URL)
     .then(() => {
       console.log("Connectioon Successful");
     })
@@ -38,7 +41,7 @@ async function newUser(name, ip) {
   let entry = new user_model({
     name: name,
     _id: ip,
-    ip:ip
+    ip: ip,
   });
   entry
     .save()
@@ -62,7 +65,7 @@ io.on("connection", (socket) => {
     } catch (err) {
       console.log("User could not be added");
     }
-    socket.broadcast.emit("reply",user+" has joined the room");
+    socket.broadcast.emit("reply", user + " has joined the room");
   });
 });
 

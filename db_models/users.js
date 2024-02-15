@@ -2,7 +2,8 @@ const mongoose =require("mongoose");
 
 const User_Schema={
     name:String,
-    id:String
+    _id:String,
+    ip:String
 };
 
 const userS=new mongoose.Schema(User_Schema);

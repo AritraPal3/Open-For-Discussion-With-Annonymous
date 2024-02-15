@@ -37,7 +37,8 @@ app.use("/", router);
 async function newUser(name, ip) {
   let entry = new user_model({
     name: name,
-    id: ip,
+    _id: ip,
+    ip:ip
   });
   entry
     .save()
@@ -66,5 +67,5 @@ io.on("connection", (socket) => {
 });
 
 server.listen(process.env.PORT, () => {
-  console.log("Server listening on port 8000");
+  console.log(`Server listening on port ${process.env.PORT}`);
 });

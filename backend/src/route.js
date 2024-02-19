@@ -18,7 +18,7 @@ function homeP(req, res, next) {
 
 function nameInit(req, res, next) {
   let name = req.body.name;
-  console.log(req.body);
+  console.log(name);
   res.render("chat", { name: name });
 }
 

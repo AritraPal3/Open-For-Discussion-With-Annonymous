@@ -3,13 +3,11 @@ import axios from 'axios';
 
 async function sendReq(username) {
     try {
-        axios.post("http://localhost:8000/chat", {
-            body:{
-                name: username,
-            }
+        await axios.post("http://localhost:8000/chat", {
+            name:username
         }, {
             headers: {
-                "Content-Type": "x-www-form-urlencoded",
+                "Content-Type": "application/json",
             },
         });
         console.log("Sent Successfully");

@@ -17,14 +17,16 @@ async function sendReq(username) {
 }
 
 function Card() {
-    const [username, setUsername] = useState(""); // Initialize with an empty string
+    const [username, setUsername] = useState("");
 
     function modify(event) {
-        setUsername(event.target.value); // Update the username state with input value
+        setUsername(event.target.value); 
     }
 
     function handleSubmit() {
-        sendReq(username); // Pass the username to sendReq function
+        if(username!=="")
+            sendReq(username);
+        setUsername("");
     }
 
     return (

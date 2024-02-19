@@ -13,6 +13,8 @@ const password=process.env.password;
 
 dotenv.config();
 const app = express();
+const cors = require('cors');
+app.use(cors());
 const server = http.createServer(app);
 const dbUrl = "mongodb://localhost:27017/Chat-App";
 

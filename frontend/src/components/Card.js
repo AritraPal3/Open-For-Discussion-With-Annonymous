@@ -35,10 +35,10 @@ function Card() {
                 <h1>WHO ARE YOU</h1>
             </div>
             <div>
-                {/* Pass reference to modify function */}
+                
                 <input type='text' name='name' placeholder='Enter your name' required onChange={modify}></input>
             </div>
-            {/* Pass handleSubmit function to onClick */}
+            
             <button type='submit' onClick={handleSubmit}>Submit</button>
         </>
     );

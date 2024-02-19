@@ -7,13 +7,14 @@ const router = require("./src/route");
 const mongoose = require("mongoose");
 const user_model = require("./db_models/users");
 const dotenv = require("dotenv");
+const cors = require('cors');
 
 const username=process.env.username;
 const password=process.env.password;
 
 dotenv.config();
 const app = express();
-const cors = require('cors');
+
 app.use(cors());
 const server = http.createServer(app);
 const dbUrl = "mongodb://localhost:27017/Chat-App";

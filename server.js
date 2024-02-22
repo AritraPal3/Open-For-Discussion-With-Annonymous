@@ -7,6 +7,7 @@ const router = require("./src/route");
 const mongoose = require("mongoose");
 const user_model = require("./db_models/users");
 const dotenv = require("dotenv");
+const cors = require("cors")
 
 const username=process.env.username;
 const password=process.env.password;
@@ -31,6 +32,7 @@ try {
 } catch (err) {
   console.log(err);
 }
+app.use(cors());
 app.use(express.static(path.join(__dirname + "/public")));
 app.use(bp.urlencoded({ extended: true }));
 app.set("view engine", "ejs");

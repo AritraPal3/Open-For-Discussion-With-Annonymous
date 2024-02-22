@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
+const url = process.env.REACT_APP_BASE_URL;
+
 async function sendReq(username) {
     try {
-        await axios.post("http://localhost:8000/chat", {
-            name:username
+        await axios.post(url, {
+            name: username
         }, {
             headers: {
                 "Content-Type": "application/json",
@@ -20,11 +22,12 @@ function Card() {
     const [username, setUsername] = useState("");
 
     function modify(event) {
-        setUsername(event.target.value); 
+        event.preventDefault();
+        setUsername(event.target.value);
     }
 
-    function handleSubmit() {
-        if(username!=="")
+    async function handleSubmit() {
+        if (username !== "")
             sendReq(username);
         setUsername("");
     }
@@ -35,10 +38,9 @@ function Card() {
                 <h1>WHO ARE YOU</h1>
             </div>
             <div>
-                
-                <input type='text' name='name' placeholder='Enter your name' required onChange={modify}></input>
+                <input type='text' value={username} name='name' placeholder='Enter your name' required onChange={modify}></input>
             </div>
-            
+
             <button type='submit' onClick={handleSubmit}>Submit</button>
         </>
     );

@@ -23,12 +23,12 @@ function nameInit(req, res, next) {
 
 function loginDetails()
 {
-
+  res.sendFile(__dirname+"./views/login.ejs")
 }
 
 function newSignup()
 {
-  
+  res.sendFile(__dirname+"./views/signUp.ejs")
 }
 
 module.exports=router

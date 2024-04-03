@@ -6,7 +6,7 @@ const User_Schema={
         unique,
     },
     _id:{
-        String,
+        Number,
         unique,
     },
     email:{

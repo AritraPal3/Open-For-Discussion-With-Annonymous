@@ -5,8 +5,7 @@ const bp = require("body-parser");
 const { Server } = require("socket.io");
 const router = require("./src/route");
 require("./config/config")
-const mongoose = require("mongoose");
-const user_model = require("./models/users");
+const {users} = require("./models/users");
 require("dotenv").config();
 const cors = require("cors")
 

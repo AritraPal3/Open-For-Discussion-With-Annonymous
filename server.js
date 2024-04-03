@@ -4,34 +4,15 @@ const path = require("path");
 const bp = require("body-parser");
 const { Server } = require("socket.io");
 const router = require("./src/route");
+require("./config/config")
 const mongoose = require("mongoose");
-const user_model = require("./db_models/users");
-const dotenv = require("dotenv");
+const user_model = require("./models/users");
+require("dotenv").config();
 const cors = require("cors")
 
-const username=process.env.username;
-const password=process.env.password;
-
-dotenv.config();
 const app = express();
 const server = http.createServer(app);
-const dbUrl = "mongodb://localhost:27017/Chat-App";
 
-async function DBconn() {
-  mongoose
-    .connect(process.env.DB_URL)
-    .then(() => {
-      console.log("Connectioon Successful");
-    })
-    .catch((err) => {
-      console.log(err);
-    });
-}
-try {
-  DBconn();
-} catch (err) {
-  console.log(err);
-}
 app.use(cors());
 app.use(express.static(path.join(__dirname + "/public")));
 app.use(bp.urlencoded({ extended: true }));

@@ -1,9 +1,18 @@
 const mongoose =require("mongoose");
 
 const User_Schema={
-    name:String,
-    _id:String,
-    ip:String
+    name:{
+        String,
+        unique,
+    },
+    _id:{
+        String,
+        unique,
+    },
+    ip:{
+        String,
+        unique,
+    }
 };
 
 const userS=new mongoose.Schema(User_Schema);

@@ -1,21 +1,23 @@
 const mongoose =require("mongoose");
 
+const commonOpts = {unique: true, required: true}
+
 const User_Schema={
     name:{
-        String,
-        unique,
+        type:String,
+        ...commonOpts,
     },
     _id:{
-        Number,
-        unique,
+        type:Number,
+        ...commonOpts,
     },
     email:{
-        String,
-        unique,
+        type:String,
+        ...commonOpts,
     },
     password:{
-        String,
-        unique,
+        type:String,
+        ...commonOpts,
     },
 };
 

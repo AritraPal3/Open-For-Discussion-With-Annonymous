@@ -13,7 +13,7 @@ function homeP(req, res, next) {
 }
 
 function nameInit(req, res, next) {
-  let name = req.oidc.name;
+  let name = req.body.user;
   console.log(name);
   res.render("chat", { name: req.oidc.user });
 }

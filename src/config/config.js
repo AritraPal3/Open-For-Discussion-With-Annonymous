@@ -12,7 +12,7 @@ async function DBconn() {
         });
 }
 try {
-    DBconn();
+    //DBconn();
 } catch (err) {
     console.log(err);
 }

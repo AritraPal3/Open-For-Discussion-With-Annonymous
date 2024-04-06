@@ -6,17 +6,17 @@ const io = new Server();
 async function handleChat(socket) {
   try {
     socket.on("chatMessage", (message) => {
-      // Broadcast the message to all connected clients
-      console.log(message);
+      //to Broadcast the message to all connected clients
+      //console.log(message);
       socket.broadcast.emit("chatMessage", message);
     });
 
     socket.once("details", async (user) => {
-      console.log(user);
+      //console.log(user);
       try {
         // Create a new user in the database
         //await users.create(user);
-        // Notify all clients that a new user has joined
+        // to Notify all clients that a new user has joined
         io.emit("reply", `${user} has joined the room`);
       } catch (err) {
         console.error("Error adding user:", err);
@@ -27,7 +27,7 @@ async function handleChat(socket) {
   }
 }
 
-// Attach the event handler to the connection event
+//to Attach the event handler to the connection event
 io.on("connection", handleChat);
 
 module.exports = {io};

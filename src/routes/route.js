@@ -1,16 +1,15 @@
 const express = require("express");
-const path=require("path")
+const path = require("path")
 const router = express.Router();
-const {requiresAuth}=require("express-openid-connect")
+const { requiresAuth } = require("express-openid-connect")
 
-// router.use(express.urlencoded({ extended: true }));
-// router.use(express.static(path.join(__dirname,"/public")));
+router.use(express.urlencoded({ extended: true }));
 
 router.get("/", homeP);
-router.post("/chat", requiresAuth(),nameInit);
+router.post("/chat", requiresAuth(), nameInit);
 
 function homeP(req, res, next) {
-    res.sendFile("");
+  res.render("form.ejs");
 }
 
 function nameInit(req, res, next) {
@@ -19,4 +18,4 @@ function nameInit(req, res, next) {
   res.render("chat", { name: req.oidc.user });
 }
 
-module.exports=router
+module.exports = router;

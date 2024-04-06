@@ -7,10 +7,10 @@ const cors = require("cors")
 const { auth } = require('express-openid-connect');
 const app = express();
 
-app.use(cors({origin:true}));
+app.use(cors({ credentials: true }));
 app.use(express.static("public"));
 app.use(bp.urlencoded({ extended: true }));
-app.use('views','views');
+app.set('views', 'views');
 app.set("view engine", "ejs");
 
 
@@ -26,7 +26,6 @@ const config = {
 app.use(auth(config));
 
 app.use("/", router);
-// req.isAuthenticated is provided from the auth router
 
 app.listen(process.env.PORT, () => {
   console.log(`Server listening on port ${process.env.PORT}`);

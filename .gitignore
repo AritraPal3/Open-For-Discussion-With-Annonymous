@@ -5,4 +5,4 @@ old/
 node_modules
 frontend
 backend
-
+.env

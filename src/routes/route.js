@@ -5,11 +5,11 @@ const { requiresAuth } = require("express-openid-connect")
 
 router.use(express.urlencoded({ extended: true }));
 
-router.get("/", homeP);
+router.get("/", homePage);
 router.post("/chat", requiresAuth(), nameInit);
 
-function homeP(req, res, next) {
-  res.render("form.ejs");
+function homePage(req, res, next) {
+  res.render("form.ejs",{state:req.oidc.isAuthenticated()});
 }
 
 function nameInit(req, res, next) {

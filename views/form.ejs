@@ -10,10 +10,13 @@
     <card>
       <content>
         <h2>
+          <%if(!state) {%>
           <a href="/login">Login</a>
+          <%}else {%>
           <a href="/logout">Logout</a>
+          <%}%>
         </h2>
-        <form action="chat" method="post">
+        <form action="/chat" method="post">
           <header>WHAT IS YOUR NAME??</header>
           <input name="name" type="text" required />
           <button type="submit">OK</button>

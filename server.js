@@ -1,6 +1,6 @@
 const express = require("express");
 const bp = require("body-parser");
-const router = require("./src/route");
+const router = require("./src/routes/route");
 require("./src/config/config")
 require("dotenv").config();
 const cors = require("cors")

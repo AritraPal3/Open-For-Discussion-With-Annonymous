@@ -4,20 +4,28 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>IDENTIFY AS</title>
-    <link href="../public/home.css" rel="stylesheet" />
+    <link href="/stylesheets/home.css" rel="stylesheet" />
   </head>
   <body>
+    <!-- <nav>
+      <div>
+        <%if(!state) {%>
+        <a href="/login">Login</a>
+        <%}else {%>
+        <a href="/logout">Logout</a>
+        <%}%>
+        </div>
+    </nav> -->
     <card>
       <content>
-        <h2>
-          <%if(!state) {%>
-          <a href="/login">Login</a>
-          <%}else {%>
-          <a href="/logout">Logout</a>
-          <%}%>
-        </h2>
         <form action="/chat" method="post">
-          <header>WHAT IS YOUR NAME??</header>
+          <header>
+            WHAT IS YOUR NAME??<%if(!state) {%>
+            <a href="/login">Login</a>
+            <%}else {%>
+            <a href="/logout">Logout</a>
+            <%}%>
+          </header>
           <input name="name" type="text" required />
           <button type="submit">OK</button>
         </form>

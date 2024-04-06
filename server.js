@@ -4,8 +4,10 @@ const router = require("./src/routes/route");
 require("./src/config/config")
 require("dotenv").config();
 const cors = require("cors")
+const http = require("http");
 const { auth } = require('express-openid-connect');
 const app = express();
+const {io}=require("./src/controllers/chat")
 
 app.use(cors({ credentials: true }));
 app.use(express.static("public"));
@@ -26,6 +28,10 @@ const config = {
 app.use(auth(config));
 
 app.use("/", router);
+
+//setting the websocket
+const server = http.createServer(app);
+io.attach(server);
 
 app.listen(process.env.PORT, () => {
   console.log(`Server listening on port ${process.env.PORT}`);

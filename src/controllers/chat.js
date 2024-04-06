@@ -7,12 +7,12 @@ async function handleChat(socket) {
   try {
     socket.on("chatMessage", (message) => {
       //to Broadcast the message to all connected clients
-      console.log(message);
+      //console.log(message);
       socket.broadcast.emit("chatMessage", message);
     });
 
     socket.once("details", async (user) => {
-      console.log(user);
+      //console.log(user);
       try {
         // Create a new user in the database
         //await users.create(user);

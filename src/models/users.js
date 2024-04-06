@@ -7,10 +7,6 @@ const User_Schema={
         type:String,
         ...commonOpts,
     },
-    _id:{
-        type:Number,
-        ...commonOpts,
-    },
     email:{
         type:String,
         ...commonOpts,

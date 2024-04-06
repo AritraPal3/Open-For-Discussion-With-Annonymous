@@ -4,3 +4,5 @@ old/
 .env
 node_modules
 frontend
+backend
+.env

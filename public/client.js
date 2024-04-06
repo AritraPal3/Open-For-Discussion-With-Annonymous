@@ -1,4 +1,4 @@
-const socket = io();
+const socket = io("/");
 
 let typed = document.getElementById("txb");
 let btn = document.getElementById("temp");
@@ -18,9 +18,9 @@ let det = document.getElementsByTagName("name")[0].innerText;
 console.log(det);
 socket.emit("details", det);
 
-socket.on("reply", (reply) => {
+socket.on("chatMessage", (reply) => {
   let para = document.createElement("recv");
-  para.innerText = reply;
+  para.textContent = reply;
   rep[0].appendChild(para);
 });
 
@@ -28,9 +28,9 @@ function sendMsg() {
   const data = typed.value;
   if (data.length > 0) {
     let para = document.createElement("send");
-    para.innerText = data;
+    para.textContent = data;
     msg[0].appendChild(para);
-
+    //debugger;
     socket.emit("chatMessage", data);
     typed.value = "";
   }

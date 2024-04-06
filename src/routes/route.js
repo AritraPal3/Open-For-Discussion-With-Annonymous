@@ -12,10 +12,10 @@ function homePage(req, res, next) {
 }
 
 function nameInit(req, res, next) {
-  let name = req.body.user;
+  let name = req.body.name;
   console.log(name);
   // res.render("chat", { name: req.oidc.user });
-  res.render("chat",{name:"TEST_USER"});
+  res.render("chat",{name});
 }
 
 module.exports = router;

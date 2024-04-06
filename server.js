@@ -33,6 +33,6 @@ app.use("/", router);
 const server = http.createServer(app);
 io.attach(server);
 
-app.listen(process.env.PORT, () => {
+server.listen(process.env.PORT, () => {
   console.log(`Server listening on port ${process.env.PORT}`);
 });

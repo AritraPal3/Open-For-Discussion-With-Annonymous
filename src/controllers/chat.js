@@ -7,7 +7,8 @@ async function handleChat(socket) {
   try {
     socket.on("chatMessage", (message) => {
       // Broadcast the message to all connected clients
-      io.emit("chatMessage", message);
+      console.log(message);
+      socket.broadcast.emit("chatMessage", message);
     });
 
     socket.once("details", async (user) => {
@@ -16,7 +17,7 @@ async function handleChat(socket) {
         // Create a new user in the database
         //await users.create(user);
         // Notify all clients that a new user has joined
-        io.emit("reply", `${user.username} has joined the room`);
+        io.emit("reply", `${user} has joined the room`);
       } catch (err) {
         console.error("Error adding user:", err);
       }

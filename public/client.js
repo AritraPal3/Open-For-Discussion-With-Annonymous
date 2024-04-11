@@ -2,8 +2,8 @@ const socket = io("/");
 
 let typed = document.getElementById("txb");
 let btn = document.getElementById("temp");
-let msg = document.getElementsByTagName("right");
-let rep = document.getElementsByTagName("left");
+let msg = document.getElementsByClassName("right");
+let rep = document.getElementsByClassName("left");
 let txtarea = document.getElementsByTagName("textarea");
 
 btn.addEventListener("click", sendMsg);

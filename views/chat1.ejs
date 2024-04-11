@@ -4,20 +4,20 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CHAT WITH ME</title>
-    <link href="/stylesheets/chat1.css" rel="stylesheet" />
+    <link href="/stylesheets/chat.css" rel="stylesheet" />
   </head>
   <body>
-    <box>
-      <log>
-        <left></left>
-        <right></right>
-      </log>
-      <sendBar>
-        <name><%=name%></name>
+    <div class="box">
+      <div class="log">
+        <div class="left"></div>
+        <div class="right"></div>
+      </div>
+      <div class="sendBar">
+        <div class="name"><%=name%></div>
         <textarea id="txb" placeholder="type here" required></textarea>
         <button type="submit" id="temp">SEND</button>
-      </sendBar>
-    </box>
+      </div>
+    </div>
     <div>
       <a href="/logout"><button id="temp">BYE</button></a>
     </div>

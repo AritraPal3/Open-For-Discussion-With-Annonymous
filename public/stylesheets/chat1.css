@@ -15,7 +15,7 @@ div{
     padding-top: 20px;
 }
 
-box{
+.box{
     border: solid 5px rgb(0, 0, 0);
     background: linear-gradient(to bottom,rgb(153, 160, 147),rgb(16, 69, 71));
     width:90%;
@@ -56,9 +56,9 @@ textarea #txb{
     font-size: large;
 }
 
-send{
+.send{
     display: flex;
-    justify-content: center;
+    justify-content: left;
     width: fit-content;
     padding: 5px;
     margin:5px;
@@ -67,9 +67,9 @@ send{
     background: linear-gradient(to left,rgba(159, 153, 153, 0.486),rgb(29, 76, 94));
 }
 
-recv{
+.recv{
     display: flex;
-    justify-content: center;
+    justify-content: right;
     width:fit-content;
     margin: 5px;
     padding: 5px;

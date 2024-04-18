@@ -2,7 +2,8 @@ const socket = io("/");
 
 let typed = document.getElementById("txb");
 let btn = document.getElementById("temp");
-let msg = document.getElementsByClassName("right");
+let resp = document.getElementsByClassName("log");
+//let msg = document.getElementsByClassName("right");
 let rep = document.getElementsByClassName("left");
 let txtarea = document.getElementsByTagName("textarea");
 
@@ -19,17 +20,23 @@ console.log(det);
 socket.emit("details", det);
 
 socket.on("chatMessage", (reply) => {
-  let para = document.createElement("recv");
+  let para = document.createElement("div");
+  para.classList.add("recv")
+  para.classList.add("left")
   para.textContent = reply;
+  resp[0].appendChild(para);
   rep[0].appendChild(para);
 });
 
 function sendMsg() {
   const data = typed.value;
   if (data.length > 0) {
-    let para = document.createElement("send");
+    let para = document.createElement("div");
+    para.classList.add("send")
+    para.classList.add("right")
     para.textContent = data;
-    msg[0].appendChild(para);
+    resp[0].appendChild(para);
+    //msg[0].appendChild(para);
     //debugger;
     socket.emit("chatMessage", data);
     typed.value = "";

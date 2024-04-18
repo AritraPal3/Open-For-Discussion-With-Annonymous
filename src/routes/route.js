@@ -15,7 +15,8 @@ function nameInit(req, res, next) {
   let name = req.body.name;
   console.log(name);
   // res.render("chat", { name: req.oidc.user });
-  res.render("chat",{name});
+  //res.render("chat",{name});
+  res.render("chat1",{name});
 }
 
 module.exports = router;
